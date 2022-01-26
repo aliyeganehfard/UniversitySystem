@@ -1,5 +1,10 @@
 package com.company;
 
+import com.company.Exceptions.*;
+import com.company.service.*;
+import com.company.utils.ExceptionHandling;
+
+import java.awt.desktop.ScreenSleepEvent;
 import java.util.Scanner;
 
 public class Main {
@@ -76,40 +81,206 @@ public class Main {
                         commend = commendLine.split(" ");
                         switch (commend[0]) {
                             case "registerStudent":
-                                studentList.add(commend[1], commend[2], commend[3], commend[4], commend[5]);
+                                try {
+                                    ExceptionHandling.isFirstName(commend[1]);
+                                    ExceptionHandling.isLastName(commend[2]);
+                                    ExceptionHandling.isNationalCode(commend[3]);
+                                    ExceptionHandling.isDate(commend[4]);
+                                    ExceptionHandling.isDepartment(commend[5]);
+                                    studentList.add(commend[1], commend[2], commend[3], commend[4], commend[5]);
+                                } catch (FirstNameException firstNameException) {
+                                    System.out.println("incorrect firstName!");
+                                } catch (LastNameException lastNameException) {
+                                    System.out.println("incorrect lastName!");
+                                } catch (DateException dateException) {
+                                    System.out.println("incorrect date!");
+                                } catch (NationalCodeException nationalCodeException) {
+                                    System.out.println("incorrect national code!");
+                                } catch (DepartmentException departmentException) {
+                                    System.out.println("incorrect department!");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "deleteStudent":
-                                studentList.delete(commend[1]);
+                                try {
+                                    ExceptionHandling.isDigit(commend[1]);
+                                    studentList.delete(commend[1]);
+                                } catch (DigitException digitException) {
+                                    System.out.println("incorrect code");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "editStudent":
-                                studentList.edit(commend[1], commend[2], commend[3], commend[4]);
+                                try {
+                                    ExceptionHandling.isDigit(commend[1]);
+                                    ExceptionHandling.isFirstName(commend[2]);
+                                    ExceptionHandling.isLastName(commend[3]);
+                                    ExceptionHandling.isNationalCode(commend[4]);
+                                    studentList.edit(commend[1], commend[2], commend[3], commend[4]);
+                                } catch (DigitException digitException) {
+                                    System.out.println("incorrect code");
+                                } catch (FirstNameException firstNameException) {
+                                    System.out.println("incorrect firstName!");
+                                } catch (LastNameException lastNameException) {
+                                    System.out.println("incorrect lastName!");
+                                } catch (NationalCodeException nationalCodeException) {
+                                    System.out.println("incorrect national code!");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
+
                                 break;
                             case "registerProfessor":
-                                professorList.add(commend[1], commend[2], commend[3], commend[4], commend[5]);
+                                try {
+                                    ExceptionHandling.isFirstName(commend[1]);
+                                    ExceptionHandling.isLastName(commend[2]);
+                                    ExceptionHandling.isNationalCode(commend[3]);
+                                    ExceptionHandling.isDate(commend[4]);
+                                    ExceptionHandling.isStatus(commend[5]);
+                                    professorList.add(commend[1], commend[2], commend[3], commend[4], commend[5]);
+                                } catch (FirstNameException firstNameException) {
+                                    System.out.println("incorrect firstName!");
+                                } catch (LastNameException lastNameException) {
+                                    System.out.println("incorrect lastName!");
+                                } catch (DateException dateException) {
+                                    System.out.println("incorrect date!");
+                                } catch (NationalCodeException nationalCodeException) {
+                                    System.out.println("incorrect national code!");
+                                } catch (StatusException statusException) {
+                                    System.out.println("incorrect department!");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "deleteProfessor":
-                                professorList.delete(commend[1]);
+                                try {
+                                    ExceptionHandling.isDigit(commend[1]);
+                                    professorList.delete(commend[1]);
+                                } catch (DigitException digitException) {
+                                    System.out.println("incorrect code");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "editProfessor":
-                                professorList.edit(commend[1], commend[2], commend[3], commend[4]);
+                                try {
+                                    ExceptionHandling.isDigit(commend[1]);
+                                    ExceptionHandling.isFirstName(commend[2]);
+                                    ExceptionHandling.isLastName(commend[3]);
+                                    ExceptionHandling.isNationalCode(commend[4]);
+                                    professorList.edit(commend[1], commend[2], commend[3], commend[4]);
+                                } catch (DigitException digitException) {
+                                    System.out.println("incorrect code");
+                                } catch (FirstNameException firstNameException) {
+                                    System.out.println("incorrect firstName!");
+                                } catch (LastNameException lastNameException) {
+                                    System.out.println("incorrect lastName!");
+                                } catch (NationalCodeException nationalCodeException) {
+                                    System.out.println("incorrect national code!");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "registerTrainingEmployee":
-                                trainingEmployeeList.add(commend[1], commend[2], commend[3], commend[4], commend[5], commend[6]);
+                                try {
+                                    ExceptionHandling.isFirstName(commend[1]);
+                                    ExceptionHandling.isLastName(commend[2]);
+                                    ExceptionHandling.isNationalCode(commend[3]);
+                                    ExceptionHandling.isDate(commend[4]);
+                                    trainingEmployeeList.add(commend[1], commend[2], commend[3], commend[4], commend[5], commend[6]);
+                                } catch (FirstNameException firstNameException) {
+                                    System.out.println("incorrect firstName!");
+                                } catch (LastNameException lastNameException) {
+                                    System.out.println("incorrect lastName!");
+                                } catch (DateException dateException) {
+                                    System.out.println("incorrect date!");
+                                } catch (NationalCodeException nationalCodeException) {
+                                    System.out.println("incorrect national code!");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "deleteTrainingEmployee":
-                                trainingEmployeeList.delete(commend[1]);
+                                try {
+                                    ExceptionHandling.isDigit(commend[1]);
+                                    trainingEmployeeList.delete(commend[1]);
+                                } catch (DigitException digitException) {
+                                    System.out.println("incorrect code");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "editTrainingEmployee":
-                                trainingEmployeeList.edit(commend[1], commend[2], commend[3], commend[4]);
+                                try {
+                                    ExceptionHandling.isDigit(commend[1]);
+                                    ExceptionHandling.isFirstName(commend[2]);
+                                    ExceptionHandling.isLastName(commend[3]);
+                                    ExceptionHandling.isNationalCode(commend[4]);
+                                    trainingEmployeeList.edit(commend[1], commend[2], commend[3], commend[4]);
+                                } catch (DigitException digitException) {
+                                    System.out.println("incorrect code");
+                                } catch (FirstNameException firstNameException) {
+                                    System.out.println("incorrect firstName!");
+                                } catch (LastNameException lastNameException) {
+                                    System.out.println("incorrect lastName!");
+                                } catch (NationalCodeException nationalCodeException) {
+                                    System.out.println("incorrect national code!");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "addCourse":
-                                courseList.add(commend[1], commend[2], commend[3], commend[4], commend[5]);
+                                try {
+                                    ExceptionHandling.isDigit(commend[1]);
+                                    ExceptionHandling.isDepartment(commend[2]);
+                                    ExceptionHandling.isWord(commend[3]);
+                                    ExceptionHandling.isUnit(commend[4]);
+                                    ExceptionHandling.isNationalCode(commend[5]);
+                                    courseList.add(commend[1], commend[2], commend[3], commend[4], commend[5]);
+                                } catch (DigitException digitException) {
+                                    System.out.println("incorrect code");
+                                } catch (DepartmentException digitException) {
+                                    System.out.println("incorrect department!");
+                                } catch (WordException wordException) {
+                                    System.out.println("incorrect courseName!");
+                                } catch (UnitException unitException) {
+                                    System.out.println("incorrect unit!");
+                                } catch (NationalCodeException nationalCodeException) {
+                                    System.out.println("incorrect NationalCode!");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "deleteCourse":
-                                courseList.delete(commend[1]);
+                                try {
+                                    ExceptionHandling.isDigit(commend[1]);
+                                    courseList.delete(commend[1]);
+                                } catch (DigitException digitException) {
+                                    System.out.println("incorrect code");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "editCourse":
-                                courseList.edit(commend[1], commend[2], commend[3], commend[4]);
+                                try {
+                                    ExceptionHandling.isDigit(commend[1]);
+                                    ExceptionHandling.isWord(commend[2]);
+                                    ExceptionHandling.isUnit(commend[3]);
+                                    ExceptionHandling.isNationalCode(commend[4]);
+                                    courseList.edit(commend[1], commend[2], commend[3], commend[4]);
+                                } catch (DigitException digitException) {
+                                    System.out.println("incorrect code");
+                                } catch (WordException wordException) {
+                                    System.out.println("incorrect courseName!");
+                                } catch (UnitException unitException) {
+                                    System.out.println("incorrect unit!");
+                                } catch (NationalCodeException nationalCodeException) {
+                                    System.out.println("incorrect NationalCode!");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "salary":
                                 System.out.println(trainingEmployeeList.showSalary());
@@ -158,14 +329,20 @@ public class Main {
                                     courses[i - 2] = commend[i];
                                 }
                                 tempTerm = commend[1];
-                                Integer unit = courseList.getUnit(courses);
-                                studentList.addTerm(id, commend[1], courses , unit);
+                                try {
+                                    Integer unit = courseList.getUnit(courses);
+                                    studentList.addTerm(id, commend[1], courses, unit);
+                                } catch (DigitException digitException) {
+                                    System.out.println("incorrect code!");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "showSelectedCourses":
-                                courseList.showStudentCourses(studentList.getStudentCoursesID(id,tempTerm) );
+                                courseList.showStudentCourses(studentList.getStudentCoursesID(id, tempTerm));
                                 String n = studentList.getNationalCode(id);
                                 scoreList.showStudentScores(n);
-                                studentList.setGrade(id,scoreList.getGradPointAverage(n));
+                                studentList.setGrade(id, scoreList.getGradPointAverage(n));
 
                                 studentList.getGrade(id);
                                 break;
@@ -199,7 +376,21 @@ public class Main {
                                 studentList.showList();
                                 break;
                             case "setScore":
-                                scoreList.add(commend[1], commend[2], id, commend[3]);
+//                                setScore courseCode studentNationalCode score
+                                try {
+                                    ExceptionHandling.isDigit(commend[1]);
+                                    ExceptionHandling.isNationalCode(commend[2]);
+                                    ExceptionHandling.isScore(commend[3]);
+                                    scoreList.add(commend[1], commend[2], id, commend[3]);
+                                } catch (DigitException digitException) {
+                                    System.out.println("incorrect code!");
+                                } catch (NationalCodeException nationalCodeException) {
+                                    System.out.println("incorrect nationalCode!");
+                                } catch (ScoreException scoreException) {
+                                    System.out.println("incorrect score!");
+                                } catch (Exception e) {
+                                    System.out.println("wrong input!");
+                                }
                                 break;
                             case "showSalary":
                                 String nationalCode = professorList.getNationalCode(id);
