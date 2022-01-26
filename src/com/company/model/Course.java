@@ -1,4 +1,6 @@
-package com.company;
+package com.company.model;
+
+import com.company.utils.DEPARTMENT;
 
 public class Course {
     private String courseCode;

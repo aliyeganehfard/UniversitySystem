@@ -1,8 +1,7 @@
-package com.company;
+package com.company.model;
 
-import java.time.LocalDate;
-import java.util.Locale;
-import java.util.Random;
+import com.company.utils.DEPARTMENT;
+import com.company.utils.RandomNumber;
 
 public class Student extends Person {
     private String studentCode ;

@@ -1,6 +1,7 @@
-package com.company;
+package com.company.model;
 
-import java.time.LocalDate;
+import com.company.utils.RandomNumber;
+import com.company.utils.STATUS;
 
 public class Professor extends Person{
     private String professorCode;

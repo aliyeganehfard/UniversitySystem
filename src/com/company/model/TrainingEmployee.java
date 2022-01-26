@@ -1,4 +1,6 @@
-package com.company;
+package com.company.model;
+
+import com.company.utils.RandomNumber;
 
 public class TrainingEmployee extends Person{
     private String userName ;
