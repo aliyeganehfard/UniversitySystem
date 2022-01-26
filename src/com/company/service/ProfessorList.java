@@ -1,4 +1,7 @@
-package com.company;
+package com.company.service;
+
+import com.company.utils.STATUS;
+import com.company.model.Professor;
 
 public class ProfessorList {
     private Professor[] list;

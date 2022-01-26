@@ -1,6 +1,8 @@
-package com.company;
+package com.company.service;
 
-import java.util.Arrays;
+import com.company.utils.DEPARTMENT;
+import com.company.model.Student;
+import com.company.model.StudentTerm;
 
 public class StudentList {
     private Student[] list;

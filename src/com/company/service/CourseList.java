@@ -1,4 +1,7 @@
-package com.company;
+package com.company.service;
+
+import com.company.utils.DEPARTMENT;
+import com.company.model.Course;
 
 public class CourseList {
     private Course[] list = new Course[1000];
