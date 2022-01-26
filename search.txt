@@ -1,0 +1,3 @@
+https://www.javatpoint.com/java-localdate
+https://stackoverflow.com/questions/2444019/how-do-i-generate-a-random-integer-between-min-and-max-in-java
+https://www.baeldung.com/java-string-to-enum
